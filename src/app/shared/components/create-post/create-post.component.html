@@ -1,0 +1,22 @@
+<div class="row mt-5">
+    <div class="col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-body">
+                <form action="" [formGroup]="submitPostForm" (ngSubmit)="onSubmitBtn()">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" formControlName="title" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="post">Posts</label>
+                        <input type="text" formControlName="body" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-info mr-3" *ngIf="submitBtnFlag" >Submit post</button>
+                        <button class="btn btn-info" *ngIf="!submitBtnFlag">Update post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-7 offset-md-2">
+    <div class="card mb-4 mt-5" *ngFor="let post of postArray">
+      <div class="card-header">
+        {{ post.title }}
+      </div>
+      <div class="card-body">
+        {{ post.body }}
+      </div>
+      <div class="card-footer text-right">
+        <button class="btn btn-outline-dark mr-3" [routerLink]="['/updatepost', post.id]">Edit</button>
+        <button class="btn btn-outline-danger" (click)="onDeletePost(post.id)">Delete</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<ng-container *ngIf="errorMsg">
+    <p class="alert alert-danger mt-5">
+        {{errorMsg}}
+    </p>
+</ng-container>
+<ng-container *ngIf="postArray.length === 0 && !errorMsg">
+    <p class="alert alert-info mt-5">
+        There is no Post Available yet !!!
+    </p>
+</ng-container>
+
